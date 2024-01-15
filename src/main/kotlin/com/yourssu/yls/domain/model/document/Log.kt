@@ -1,6 +1,6 @@
-package com.yourssu.yls.entity
+package com.yourssu.yls.domain.model.document
 
-import com.yourssu.yls.common.EventVO
+import com.yourssu.yls.domain.model.nested.EventVO
 import org.springframework.data.elasticsearch.annotations.Document
 import org.springframework.data.elasticsearch.annotations.Field
 import org.springframework.data.elasticsearch.annotations.FieldType
