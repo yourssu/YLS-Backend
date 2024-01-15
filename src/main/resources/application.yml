@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  output:
+    ansi:
+      enabled: always
+
+logging:
+  file:
+    name: ${log-path} # slf4j를 사용할 때 생기는 로그 파일 경로
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
