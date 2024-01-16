@@ -1,6 +1,5 @@
 package com.yourssu.yls.app.response
 
-// 확정 필요
 class LoggingResponse(
     val user: String,
     val timestamp: String,
