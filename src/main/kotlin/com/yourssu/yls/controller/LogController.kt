@@ -15,7 +15,7 @@ class LogController(
         @RequestParam(defaultValue = "0") page: Int,
         @RequestParam(defaultValue = "10") size: Int
     ): ResponseEntity<List<LogDTO>> {
-        val logs = logService.getLogs(page, size)
+        val logs =  logService.getLogs(page, size)
         return ResponseEntity.ok(logs)
     }
 
@@ -24,6 +24,7 @@ class LogController(
         @RequestBody logRequest: LogRequest
     ) {
         val logDTO = LogDTO.from(logRequest)
-        logService.saveLog(logDTO)
+        // logService.saveLog(logDTO)
+        Thread.startVirtualThread {logService.saveLog(logDTO)}
     }
 }

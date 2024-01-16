@@ -2,3 +2,9 @@ spring:
   elasticsearch:
     rest:
       uris: "localhost:9200"
+  threads:
+    virtual:
+      enabled: false
+server:
+  tomcat:
+    max-connections: 10000
