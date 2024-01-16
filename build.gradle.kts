@@ -25,6 +25,8 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.elasticsearch.client:elasticsearch-rest-high-level-client:7.10.1")
+	implementation("org.springframework.data:spring-data-elasticsearch:4.1.1")
 }
 
 tasks.withType<KotlinCompile> {
