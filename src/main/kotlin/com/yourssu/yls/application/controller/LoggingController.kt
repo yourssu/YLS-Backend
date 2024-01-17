@@ -1,10 +1,11 @@
-package com.yourssu.yls.app.controller
+package com.yourssu.yls.application.controller
 
-import com.yourssu.yls.app.request.LoggingRequest
+import com.yourssu.yls.application.request.LoggingRequest
+import com.yourssu.yls.application.response.LoggingResponse
 import com.yourssu.yls.domain.service.LoggingService
-import com.yourssu.yls.global.dto.ResponseDTO
+import com.yourssu.yls.global.dto.ResponseDto
 import jakarta.validation.Valid
-import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -14,12 +15,10 @@ import org.springframework.web.bind.annotation.RestController
 class LoggingController(
     private val loggingService: LoggingService,
 ) {
-    @PostMapping("/write")
+    @PutMapping
     fun writeLog(
         @RequestBody @Valid request: LoggingRequest,
-    ): ResponseDTO<Void> {
-        loggingService.writeLog(request)
-
-        return ResponseDTO.success("logging 저장 성공: 성공적으로 저장되었습니다.")
+    ): ResponseDto<LoggingResponse> {
+        return ResponseDto.success(loggingService.writeLog(request))
     }
 }

@@ -1,4 +1,4 @@
-package com.yourssu.yls.app.response
+package com.yourssu.yls.application.response
 
 class LoggingResponse(
     val user: String,

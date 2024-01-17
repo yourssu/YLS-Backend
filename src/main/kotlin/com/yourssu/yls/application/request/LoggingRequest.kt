@@ -1,4 +1,4 @@
-package com.yourssu.yls.app.request
+package com.yourssu.yls.application.request
 
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotNull
 class LoggingRequest(
     @field:NotBlank
     val user: String,
+    @field:NotNull
+    val timestamp: String,
     @field:NotNull
     val event: EventRequest,
 )
