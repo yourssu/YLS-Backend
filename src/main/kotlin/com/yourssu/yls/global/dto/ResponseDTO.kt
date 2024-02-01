@@ -12,10 +12,24 @@ class ResponseDto<T>(
             )
         }
 
+        fun <T> success(): ResponseDto<T> {
+            return ResponseDto(
+                success = true,
+                result = null,
+            )
+        }
+
         fun <T> fail(result: T): ResponseDto<T> {
             return ResponseDto(
                 success = false,
                 result = result,
+            )
+        }
+
+        fun <T> fail(): ResponseDto<T> {
+            return ResponseDto(
+                success = false,
+                result = null,
             )
         }
     }
