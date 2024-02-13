@@ -1,5 +1,6 @@
 package com.yourssu.yls.domain.service
 
+import com.yourssu.yls.application.request.LogListRequest
 import com.yourssu.yls.application.request.LoggingRequest
 import com.yourssu.yls.application.response.LoggingResponse
 import com.yourssu.yls.domain.model.document.LogDocument
@@ -16,5 +17,16 @@ class LoggingService(
         val logDocument: LogDocument = LogAssembler.writeDocument(request)
         val savedLogDocument = loggingRepository.save(logDocument)
         return LogAssembler.writeDto(savedLogDocument)
+    }
+
+    @Transactional
+    fun writeLogUsingList(request: LogListRequest) {
+        val logDocumentList: List<LogDocument> =
+            request
+                .logRequestList
+                .map { LogAssembler.writeDocument(it) }
+                .toList()
+
+        loggingRepository.saveAll(logDocumentList)
     }
 }
