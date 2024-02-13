@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull
 
 class LoggingRequest(
     @field:NotBlank
-    val user: String,
+    val hashedID: String,
     @field:NotNull
     val timestamp: String,
     @field:NotNull
