@@ -6,7 +6,6 @@ import com.yourssu.yls.domain.model.document.LogDocument
 
 object LogAssembler {
     fun writeDto(logDocument: LogDocument): LoggingResponse {
-
         return LoggingResponse(
             user = logDocument.user,
             timestamp = logDocument.timestamp,
@@ -15,9 +14,8 @@ object LogAssembler {
     }
 
     fun writeDocument(loggingRequest: LoggingRequest): LogDocument {
-
         return LogDocument(
-            user = loggingRequest.user,
+            user = loggingRequest.hashedID,
             timestamp = loggingRequest.timestamp,
             event = loggingRequest.event,
         )
