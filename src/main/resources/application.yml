@@ -1,6 +1,11 @@
 server:
   port: 8080
 
+es:
+  id: ${ES_ID}
+  password: ${ES_PASSWORD}
+  endpoint: ${ES_ENDPOINT}
+
 spring:
   output:
     ansi:
