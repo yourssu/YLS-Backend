@@ -12,5 +12,5 @@ class LogDocument(
     val user: String,
     val timestamp: String,
     @Field(type = FieldType.Nested)
-    val event: Map<String, String>,
+    val event: Map<String, Any>,
 )

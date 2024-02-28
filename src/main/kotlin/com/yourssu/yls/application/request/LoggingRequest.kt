@@ -9,5 +9,5 @@ class LoggingRequest(
     @field:NotNull
     val timestamp: String,
     @field:NotNull
-    val event: Map<String, String>,
+    val event: Map<String, Any>,
 )
