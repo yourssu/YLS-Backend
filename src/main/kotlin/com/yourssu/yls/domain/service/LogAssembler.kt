@@ -9,6 +9,7 @@ object LogAssembler {
         return LoggingResponse(
             user = logDocument.user,
             timestamp = logDocument.timestamp,
+            version = logDocument.version,
             event = logDocument.event,
         )
     }
@@ -17,6 +18,7 @@ object LogAssembler {
         return LogDocument(
             user = loggingRequest.hashedID,
             timestamp = loggingRequest.timestamp,
+            version = loggingRequest.version,
             event = loggingRequest.event,
         )
     }
